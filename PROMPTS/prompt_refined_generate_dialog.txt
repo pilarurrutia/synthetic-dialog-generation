@@ -1,0 +1,21 @@
+You are a dialog generation expert.
+
+Your task is to generate a fully realistic human conversation based on the following specification.
+
+Requirements:
+- The dialog must match EXACTLY the number of turns given. Do NOT shorten or extend it.
+- Alternate consistently between P1: and P2:.
+- Include minor digressions, clarifications, or misunderstandings.
+- Use informal, natural language with occasional hesitations ("uh", "hmm") and repetitions.
+- ⚠️ Do NOT include any heading, explanation, or extra text. Only output the dialog lines.
+
+Specification:
+---
+{SPECIFICATION_HERE}
+
+Output format (strict):
+P1: ...
+P2: ...
+P1: ...
+...
+

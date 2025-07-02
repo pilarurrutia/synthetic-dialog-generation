@@ -1,0 +1,24 @@
+# Básicas
+pandas
+numpy
+matplotlib
+seaborn
+tqdm
+scikit-learn
+
+# NLP y métricas
+nltk
+evaluate
+rouge-score
+bert-score
+mauve-text
+kaleido>=0.2.1
+
+# Otros
+wordcloud
+plotly
+python-dotenv
+openai
+
+# Hugging Face Transformers desde GitHub
+git+https://github.com/huggingface/transformers.git

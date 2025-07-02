@@ -1,0 +1,58 @@
+You are an expert in dialog evaluation.
+
+Your task is to assess the quality of a generated dialog using the following information:
+
+Generated dialog:
+{GENERATED_DIALOG_HERE}
+
+Reference dialog (if provided):
+{REFERENCE_DIALOG_HERE}
+
+Dialog specification:
+{SPECIFICATION_HERE}
+
+Please rate the generated dialog on a scale from 1 (poor) to 5 (excellent) for each of the following criteria, using the guidelines below:
+
+Definitions and guidelines:
+- Fluency:
+    1 = robotic or awkward,
+    3 = mostly natural with occasional awkwardness,
+    5 = completely natural and human-like.
+- Coherence:
+    1 = incoherent, frequent topic jumps,
+    3 = generally logical with minor gaps,
+    5 = fully consistent, smooth flow.
+- Realism:
+    1 = artificial or unnatural,
+    3 = somewhat believable,
+    5 = fully authentic, resembles real human talk.
+- Fidelity to Specification:
+    1 = misses major points or requirements,
+    3 = covers most key elements,
+    5 = fully satisfies the specification (including turn count).
+- Engagement:
+    1 = boring or repetitive,
+    3 = moderately interesting,
+    5 = highly engaging and emotionally appealing.
+- Originality:
+    1 = generic, cliché,
+    3 = some novel or unexpected elements,
+    5 = highly creative, original content.
+
+Also, provide a brief global comment summarizing the main strengths and weaknesses (maximum 2–3 sentences).
+
+⚠️ Be strict and fair in your ratings; use the full range from 1 to 5 where appropriate. 
+
+⚠️ Respond ONLY with a valid Python dictionary and nothing else.
+
+Example format:
+{
+  "fluency": 4,
+  "coherence": 5,
+  "realism": 3,
+  "fidelity_to_specification": 4,
+  "engagement": 4,
+  "originality": 3,
+  "comments": "The dialog was fluent and engaging but lacked originality and missed some of the specification details."
+}
+

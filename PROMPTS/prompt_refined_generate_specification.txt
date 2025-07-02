@@ -1,0 +1,31 @@
+You are an expert in analyzing human conversations.
+
+Your task is to return a valid Python dictionary summarizing the following dialog.
+
+⚠️ Return ONLY a valid Python dictionary, with correct syntax and keys exactly as shown below. Use integers for "turns" and "participants", and strings for all other values.
+Do NOT include any heading, explanation, notes, or comments. 
+
+
+Include:
+- topic
+- number of turns. Include variation.
+- number of participants. Include variation.
+- tone of each participant: describe each participant’s style in 1-2 words (e.g., assertive, uncertain, sarcastic, casual, enthusiastic…)
+- goals of each participant: summarize each speaker’s intention in 2-8 words.
+- subplots: optional minor events or shifts in topic
+- imperfections: choose from ["hesitation", "repetition", "off-topic", "contradiction", "unnatural phrasing", "incomplete"]
+
+Format:
+{
+  "topic": "...",
+  "turns": 6,
+  "participants": 2,
+  "tone": { "P1": "...", "P2": "..." },
+  "goals": { "P1": "...", "P2": "..." },
+  "subplots": ["..."],
+  "imperfections": ["hesitation", "repetition"]
+}
+
+Dialog:
+---
+{REAL_DIALOG_HERE}
