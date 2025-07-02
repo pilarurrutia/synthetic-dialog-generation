@@ -1,58 +1,61 @@
-You are an expert in dialog evaluation.
+You must evaluate a generated dialog against:
+- A reference human dialog
+- A task specification
 
-Your task is to assess the quality of a generated dialog using the following information:
+Rate each criterion from 1 (very bad) to 5 (excellent). Use the full range. Justify each rating briefly and clearly.
+
+---
+
+EXAMPLE DIALOG (STRICT EVALUATION)
+
+Specification:
+{"topic": "booking a holiday", "turns": 6, "participants": 2}
+
+Generated dialog:
+P1: Hi.
+P2: Hello. Vacation.
+P1: So. Sure.
+P2: Yes.
+
+
+Reference dialog:
+P1: Hey, I was thinking we should finally book that trip to Lisbon.
+P2: Yeah! Flights or Airbnb first?
+P1: Let's check flights — maybe Skyscanner?
+P2: Good idea. I'll search tonight and send options.
+P1: Great, and I’ll take care of the hotel.
+P2: Deal. We’re going to Portugal!
+
+Evaluation:
+-fluency: 2 -> The language lacks smoothness and syntactic completeness.
+-coherence: 1 -> No logical progression; responses are disconnected and unmotivated.
+-realism: 1 -> Unnatural and unconvincing; human conversations are never this vague.
+-fidelity_to_specification: 2 -> Formal requirements met, but the topic is missing completely. Missed on the number of turns.
+-engagement: 1 -> Flat and emotionless; there's nothing engaging in this exchange.
+-originality: 1 -> Bland and content-free; lacks even the most basic creative input.
+-comments: "An empty, robotic dialog that fails to express any purpose or relevance to the task."
+
+
+---
+
+Now evaluate the next dialog using the same structure and strictness.
 
 Generated dialog:
 {GENERATED_DIALOG_HERE}
 
-Reference dialog (if provided):
+Reference dialog:
 {REFERENCE_DIALOG_HERE}
 
-Dialog specification:
+Specification:
 {SPECIFICATION_HERE}
 
-Please rate the generated dialog on a scale from 1 (poor) to 5 (excellent) for each of the following criteria, using the guidelines below:
-
-Definitions and guidelines:
-- Fluency:
-    1 = robotic or awkward,
-    3 = mostly natural with occasional awkwardness,
-    5 = completely natural and human-like.
-- Coherence:
-    1 = incoherent, frequent topic jumps,
-    3 = generally logical with minor gaps,
-    5 = fully consistent, smooth flow.
-- Realism:
-    1 = artificial or unnatural,
-    3 = somewhat believable,
-    5 = fully authentic, resembles real human talk.
-- Fidelity to Specification:
-    1 = misses major points or requirements,
-    3 = covers most key elements,
-    5 = fully satisfies the specification (including turn count).
-- Engagement:
-    1 = boring or repetitive,
-    3 = moderately interesting,
-    5 = highly engaging and emotionally appealing.
-- Originality:
-    1 = generic, cliché,
-    3 = some novel or unexpected elements,
-    5 = highly creative, original content.
-
-Also, provide a brief global comment summarizing the main strengths and weaknesses (maximum 2–3 sentences).
-
-⚠️ Be strict and fair in your ratings; use the full range from 1 to 5 where appropriate. 
-
-⚠️ Respond ONLY with a valid Python dictionary and nothing else.
-
+⚠️ Return ONLY a Python dictionary.
 Example format:
 {
-  "fluency": 4,
-  "coherence": 5,
-  "realism": 3,
-  "fidelity_to_specification": 4,
-  "engagement": 4,
-  "originality": 3,
-  "comments": "The dialog was fluent and engaging but lacked originality and missed some of the specification details."
-}
-
+  "fluency": 2,
+  "coherence": 1,
+  "realism": 1,
+  "fidelity_to_specification": 2,
+  "engagement": 1,
+  "originality": 1,
+  "comments": "An empty, robotic dialog that fails to express any purpose or relevance to the task."
